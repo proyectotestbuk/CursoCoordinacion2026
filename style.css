@@ -1,0 +1,629 @@
+/* ===================================================================
+   IMAGEN CORPORATIVA PERSONAL — Juan Antonio Agudo García
+   Material didáctico y documentación de cursos (docente freelance).
+   Creada el lunes 21/09/2026; fuentes cambiadas a las de Windows 11 ese mismo día.
+
+   Es la hoja del vault (05-Assets/plantillas/sitio-proyecto/style.css)
+   con DOS cambios de marca y nada más:
+     · el amarillo de Equaltech (#F9AF1A) → TEAL:  #115E59 sobre fondo
+       claro y #5EEAD4 sobre fondo oscuro. Sobre azul noche el teal oscuro
+       no se lee (3,5:1); por eso hay dos tonos.
+     · las tipografías: Segoe UI (títulos y etiquetas) + Calibri (texto),
+       las que trae Windows 11 de serie —no hay que instalar nada— y que
+       sustituyen a Literata + Public Sans. Calibri es la que recomiendan
+       Microsoft y las guías de accesibilidad (BDA, Vision Australia).
+   Se conservan el azul noche #001220 y el gris #3F3F3E de Equaltech y el
+   CÓDIGO DE COLOR SEMÁNTICO del curso (términos generales / locales en
+   granate / normativa en violeta; avisos idea · aula · conexión · nemo),
+   porque significan algo y no son «marca».
+
+   Fuente de verdad de la marca: imagen-corporativa-juan.md (misma carpeta).
+   Enlazar SIEMPRE con ruta relativa; no copiar este fichero por proyecto.
+   =================================================================== */
+
+:root{
+  /* --- MARCA (imagen corporativa personal de Juan Antonio Agudo García) --- */
+  --noche:#001220; --noche-800:#0a2137; --noche-700:#14344f;     /* azul noche: estructura y texto de títulos */
+  --teal:#115E59;                                                /* acento sobre fondo CLARO (7,6:1 sobre blanco) */
+  --teal-claro:#5EEAD4;                                          /* acento sobre fondo OSCURO (12,8:1 sobre noche) — nunca sobre blanco */
+  --teal-tinte:#E6F4F1; --teal-borde:#b9dfd8;
+  /* --- alias heredados de la hoja base del vault: NO renombrar --- */
+  --azul-900:var(--noche); --azul-800:var(--noche-800); --azul-700:var(--noche-700); --azul-100:#e8eef4;
+  --ocre:#b8862f; --tinta:#2a2a29; --gris:#5b5b59; --gris-claro:#e2e2df;
+  --fondo:#fbfaf7; --panel:#ffffff; --verde-nucleo:#2f6b4f; --ambar:#8a5a12;
+  --radio:8px; --maxw:840px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0; background:var(--fondo); color:var(--tinta);
+  font-family: Calibri, 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  font-size:17px; line-height:1.65;
+}
+header.site{
+  background:linear-gradient(135deg,var(--azul-900),var(--azul-700));
+  color:#fff; padding:2.2rem 1.5rem 1.8rem;
+  border-bottom:4px solid var(--teal-claro);
+}
+header.site .eyebrow{
+  font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+  text-transform:uppercase; letter-spacing:.08em; font-size:.78rem;
+  color:var(--teal-claro); font-weight:600; margin:0 0 .4rem;
+}
+header.site h1{ font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif; margin:0 0 .5rem; font-size:1.7rem; line-height:1.3; font-weight:700; }
+header.site p.subtitulo{ margin:0; color:#dbe7f4; font-size:.98rem; max-width:var(--maxw); }
+nav.breadcrumb{
+  max-width:var(--maxw); margin:0 auto; padding:.9rem 1.5rem 0;
+  font-size:.88rem; color:var(--gris);
+}
+nav.breadcrumb a{ color:var(--teal); text-decoration:none; }
+nav.breadcrumb a:hover{ text-decoration:underline; }
+main{ max-width:var(--maxw); margin:0 auto; padding:1.6rem 1.5rem 4rem; }
+.badge{
+  display:inline-block; font-size:.74rem; font-weight:600; padding:.18rem .55rem;
+  border-radius:999px; letter-spacing:.02em; margin-right:.35rem; white-space:nowrap;
+}
+.badge-nucleo{ background:#e6f2ec; color:var(--verde-nucleo); }
+.badge-prep{ background:var(--azul-100); color:var(--azul-700); }
+.badge-docente{ background:#f7ecd9; color:var(--ambar); }
+.badge-fiabilidad{ background:var(--gris-claro); color:var(--gris); font-weight:500; }
+.meta-linea{ margin:.6rem 0 1.6rem; font-size:.85rem; color:var(--gris); }
+.meta-linea .fiabilidad-txt{ display:block; margin-top:.5rem; font-style:italic; }
+.aviso-interno{
+  background:#fbf3e3; border:1px solid #ecd9ad; border-left:4px solid var(--ambar);
+  border-radius:var(--radio); padding:.85rem 1.1rem; margin:0 0 1.8rem; font-size:.92rem; color:#5b4415;
+}
+h1.titulo-pagina{ font-size:1.65rem; line-height:1.32; margin:0 0 .3rem; color:var(--azul-900); }
+article h2{
+  font-size:1.28rem; color:var(--azul-800); margin:2.2rem 0 .8rem;
+  padding-bottom:.35rem; border-bottom:2px solid var(--teal);
+}
+article h3{ font-size:1.08rem; color:var(--azul-700); margin:1.6rem 0 .5rem; }
+article h4{ font-size:.98rem; color:var(--tinta); margin:1.2rem 0 .4rem; }
+article p{ margin:0 0 1rem; }
+article ul, article ol{ margin:0 0 1.1rem; padding-left:1.4rem; }
+article li{ margin:.3rem 0; }
+article li > ul, article li > ol{ margin-top:.35rem; }
+article strong{ color:var(--azul-900); }
+article blockquote{
+  margin:1.2rem 0; padding:.7rem 1.1rem; background:var(--teal-tinte);
+  border-left:4px solid var(--teal); border-radius:0 var(--radio) var(--radio) 0;
+  color:#0f3d3a; font-size:1.05rem;
+}
+article code{
+  background:#eef0f2; padding:.12rem .35rem; border-radius:4px;
+  font-family:Consolas,"Courier New",monospace; font-size:.88em; color:#8a2b2b;
+}
+article pre{
+  background:#1f2933; color:#e8ecef; padding:1rem 1.1rem; border-radius:var(--radio);
+  overflow-x:auto; font-size:.86rem; line-height:1.5;
+}
+article pre code{ background:none; color:inherit; padding:0; }
+article table{
+  width:100%; border-collapse:collapse; margin:1.2rem 0; font-size:1rem;
+}
+article th, article td{ border:1px solid var(--gris-claro); padding:.55rem .7rem; text-align:left; vertical-align:top; }
+article th{ background:var(--azul-100); color:var(--azul-900); font-weight:600; }
+article tr:nth-child(even) td{ background:#f7f8f9; }
+article hr{ border:none; border-top:1px solid var(--gris-claro); margin:2rem 0; }
+article a{ color:var(--teal); }
+aside.toc{
+  background:var(--panel); border:1px solid var(--gris-claro); border-radius:var(--radio);
+  padding:1rem 1.2rem; margin:1.6rem 0 2rem; font-size:.9rem;
+}
+aside.toc p.toc-titulo{ margin:0 0 .5rem; font-weight:700; color:var(--azul-800); text-transform:uppercase; font-size:.76rem; letter-spacing:.05em; }
+aside.toc ul{ margin:0; padding-left:1.1rem; }
+aside.toc ul ul{ padding-left:1.1rem; }
+aside.toc li{ margin:.2rem 0; }
+aside.toc a{ color:var(--teal); text-decoration:none; }
+aside.toc a:hover{ text-decoration:underline; }
+nav.paginacion{
+  display:flex; justify-content:space-between; gap:1rem; margin-top:2.8rem;
+  padding-top:1.3rem; border-top:1px solid var(--gris-claro); font-size:.9rem;
+}
+nav.paginacion a{ color:var(--teal); text-decoration:none; max-width:46%; }
+nav.paginacion a:hover{ text-decoration:underline; }
+nav.paginacion .dir{ display:block; font-size:.74rem; color:var(--gris); text-transform:uppercase; letter-spacing:.04em; }
+footer.site{ text-align:center; color:var(--gris); font-size:.82rem; padding:1.6rem; }
+footer.site a{ color:var(--teal); }
+
+/* -------- indice -------- */
+section.indice-bloque{ margin:2rem 0; }
+section.indice-bloque h2{
+  font-size:1.15rem; color:var(--azul-800); margin:0 0 .3rem;
+  padding-bottom:.4rem; border-bottom:2px solid var(--teal);
+}
+section.indice-bloque p.explicacion{ color:var(--gris); font-size:.9rem; margin:.3rem 0 1rem; }
+ul.lista-temas{ list-style:none; margin:0; padding:0; }
+ul.lista-temas li{
+  display:flex; gap:1rem; align-items:flex-start; padding:.9rem 0;
+  border-bottom:1px solid var(--gris-claro);
+}
+ul.lista-temas li:last-child{ border-bottom:none; }
+.num-tema{
+  flex:0 0 auto; width:2.4rem; height:2.4rem; border-radius:50%;
+  background:var(--teal-tinte); color:var(--teal); font-weight:700;
+  display:flex; align-items:center; justify-content:center; font-size:.95rem;
+}
+.num-tema.nucleo{ background:#e6f2ec; color:var(--verde-nucleo); }
+.num-tema.docente{ background:#f7ecd9; color:var(--ambar); }
+.tema-cuerpo a{ font-weight:600; color:var(--azul-900); text-decoration:none; font-size:1.02rem; }
+.tema-cuerpo a:hover{ text-decoration:underline; }
+.tema-cuerpo p{ margin:.3rem 0 0; color:var(--gris); font-size:.92rem; }
+.ficha-curso{
+  background:var(--panel); border:1px solid var(--gris-claro); border-radius:var(--radio);
+  padding:1.3rem 1.5rem; margin:0 0 2rem;
+}
+.ficha-curso dl{ display:grid; grid-template-columns:auto 1fr; gap:.35rem 1rem; margin:0; font-size:.92rem; }
+.ficha-curso dt{ color:var(--gris); font-weight:600; }
+.ficha-curso dd{ margin:0; }
+
+@media (max-width:600px){
+  header.site h1{ font-size:1.35rem; }
+  main{ padding:1.2rem 1rem 3rem; }
+  ul.lista-temas li{ gap:.7rem; }
+}
+
+@media print{
+  header.site, nav.breadcrumb, nav.paginacion, aside.toc{ display:none; }
+  footer.site{ border-top:2px solid var(--teal); }
+  body{ background:#fff; font-size:12pt; }
+  main{ max-width:100%; padding:0; }
+  article a{ color:#000; text-decoration:underline; }
+}
+
+/* ===================================================================
+   v2 — maqueta a pantalla completa + tipografías de marca + componentes
+   nuevos (términos, avisos, glosario en fichas, mapas, comparativas).
+   Aprobada por Juan el 11/09/2026 en index.html y 00-vocabulario...html;
+   aplicada al resto del temario a partir de esa misma fecha.
+   =================================================================== */
+:root{
+  --termino-bg:#cfeae5;
+  --nemo:#2f6b4f;
+  --nemo-bg:#eaf3ee;
+  --conexion-bg:#eaf1f8;
+  --fuente:#3d5566;
+  --fuente-bg:#ebf0f3;
+}
+
+/* -------- ancho completo: Juan solo la ve en su PC, sin límite de columna -------- */
+main{
+  max-width:none;
+  width:100%;
+  padding:1.6rem 2.5rem 4rem;
+  box-sizing:border-box;
+}
+nav.breadcrumb{
+  max-width:none;
+  padding-left:2.5rem;
+  padding-right:2.5rem;
+}
+article{
+  max-width:none;
+  width:100%;
+  font-family:Calibri,'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+  font-size:1.2rem;
+  line-height:1.7;
+}
+article > blockquote:first-child{
+  font-size:1rem;
+  line-height:1.65;
+}
+
+/* -------- cabeceras dentro del artículo: sans, para que corten el texto -------- */
+article h2, article h3, article h4{
+  font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+}
+article h2{
+  font-size:1.3rem;
+  margin:2.6rem 0 1rem;
+}
+article h2:first-of-type{ margin-top:1.8rem; }
+article h3{
+  font-size:1.05rem;
+  margin:1.9rem 0 .7rem;
+  color:var(--azul-800);
+}
+article section + section{ margin-top:.5rem; }
+
+/* -------- término destacado: subrayado tipo marcador, no negrita suelta -------- */
+.termino{
+  font-weight:600;
+  color:var(--azul-900);
+  background-image:linear-gradient(var(--termino-bg), var(--termino-bg));
+  background-repeat:no-repeat;
+  background-size:100% 42%;
+  background-position:0 88%;
+  padding:0 .05em;
+}
+a.termino.wiki-link{
+  text-decoration:none;
+}
+a.termino.wiki-link:hover{
+  background-size:100% 100%;
+}
+.wiki-ico{
+  font-weight:400;
+  font-size:.72em;
+  color:var(--teal);
+  vertical-align:super;
+}
+
+/* ===================================================================
+   Código de color de términos (13/09/2026, a petición de Juan).
+   Tres familias, para poder barrer la página de un vistazo:
+     .termino            → concepto general. Enlace a Wikipedia si se
+                           ha verificado que el artículo existe.
+     .termino.local      → específico de la Diputación de Badajoz, de la
+                           provincia o de Extremadura  (GRANATE).
+     .termino.norma      → ley, artículo, reglamento o figura jurídica
+                           concreta  (VIOLETA).
+   Y un estado transversal:
+     .sin-enlace         → subrayado punteado + lupa. Significa "no se
+                           encontró URL oficial fiable: Juan, ponle tú
+                           el enlace que te sirva".
+   =================================================================== */
+.termino.local{
+  color:#7d2442;
+  background-image:linear-gradient(#fadfe8,#fadfe8);
+}
+.termino.norma{
+  color:#4c3486;
+  background-image:linear-gradient(#e8e2f7,#e8e2f7);
+}
+a.termino.local:hover, a.termino.norma:hover{ background-size:100% 100%; }
+a.termino.local, a.termino.norma{ text-decoration:none; }
+
+.termino.sin-enlace{
+  border-bottom:2px dotted currentColor;
+  cursor:help;
+}
+.termino.sin-enlace::after{
+  content:"\00a0🔎";
+  font-size:.72em;
+  opacity:.65;
+  vertical-align:super;
+}
+
+/* -------- leyenda del código de color, una línea bajo el breadcrumb -------- */
+.leyenda-terminos{
+  font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+  font-size:.74rem;
+  color:var(--gris);
+  padding:.45rem 2.5rem .1rem;
+  display:flex;
+  flex-wrap:wrap;
+  gap:.2rem 1.4rem;
+  align-items:baseline;
+}
+.lg-wiki, .lg-local, .lg-norma{
+  font-weight:600;
+  padding:0 .18em;
+  border-radius:2px;
+}
+.lg-wiki{ color:var(--azul-900); background:var(--termino-bg); }
+.lg-local{ color:#7d2442; background:#fadfe8; }
+.lg-norma{ color:#4c3486; background:#e8e2f7; }
+
+/* -------- listas dentro del artículo, algo más de aire -------- */
+article ul li, article ol li{ margin:.45rem 0; }
+
+/* -------- avisos / callouts con función distinta cada uno -------- */
+.nota{
+  margin:1.3rem 0;
+  padding:.85rem 1.1rem;
+  border-radius:0 6px 6px 0;
+  font-size:1.03rem;
+  line-height:1.6;
+}
+.nota p{ margin:0; }
+.nota .nota-etiqueta{
+  display:block;
+  font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+  font-weight:700;
+  font-size:.8rem;
+  margin-bottom:.3rem;
+}
+.nota-idea{
+  background:#f7ecd9;   /* ocre semántico «idea»; NO es el marcador de términos */
+  border-left:4px solid var(--ocre);
+  color:#5b4415;
+}
+.nota-idea .nota-etiqueta{ color:var(--ambar); }
+.nota-aula{
+  background:#fbf3e3;
+  border-left:4px solid var(--ambar);
+  color:#5b4415;
+}
+.nota-aula .nota-etiqueta{ color:var(--ambar); }
+.nota-nemo{
+  background:var(--nemo-bg);
+  border-left:4px solid var(--nemo);
+  color:#1e4433;
+}
+.nota-nemo .nota-etiqueta{ color:var(--nemo); }
+.nota-conexion{
+  background:var(--conexion-bg);
+  border-left:4px solid var(--azul-700);
+  color:#1f3a56;
+}
+.nota-conexion .nota-etiqueta{ color:var(--azul-700); }
+.nota-fuente{
+  background:var(--fuente-bg);
+  border-left:4px solid var(--fuente);
+  color:#22323d;
+}
+.nota-fuente .nota-etiqueta{ color:var(--fuente); }
+.nota-fuente ul{ margin:.5rem 0 0; padding-left:1.2rem; }
+.nota-fuente li{ margin:.2rem 0; }
+.nota-fuente .fuente-cita{
+  display:block; margin-top:.5rem; font-size:.82rem; color:#4f6878; font-style:italic;
+}
+.enlaces-interes{
+  list-style:none; margin:1rem 0 0; padding:0;
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:.7rem;
+}
+.enlaces-interes li{
+  border:1px solid var(--gris-claro); border-radius:4px; padding:.7rem .85rem;
+}
+.enlaces-interes a{
+  font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif; font-weight:600; font-size:.92rem;
+  color:var(--azul-800); text-decoration:none;
+}
+.enlaces-interes a:hover{ text-decoration:underline; }
+.enlaces-interes span{ display:block; font-size:.82rem; color:var(--gris); margin-top:.25rem; }
+
+/* -------- resumen de cierre -------- */
+.resumen-cierre{
+  background:var(--azul-900);
+  color:#eef3f8;
+  border-radius:8px;
+  padding:1.3rem 1.5rem;
+  margin:1.6rem 0 1.8rem;
+  font-size:1rem;
+  line-height:1.7;
+}
+.resumen-cierre .nota-etiqueta{
+  display:block;
+  font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+  font-weight:700;
+  font-size:.8rem;
+  color:var(--teal-claro);
+  margin-bottom:.4rem;
+}
+.resumen-cierre p{ margin:0; }
+
+/* -------- comparativa a dos columnas -------- */
+.comparativa{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1rem;
+  margin:1.3rem 0;
+}
+.comparativa > div{
+  border:1px solid var(--gris-claro);
+  border-radius:6px;
+  padding:1rem 1.1rem;
+  background:var(--panel);
+}
+.comparativa h4{
+  margin:0 0 .5rem;
+  font-size:.98rem;
+  color:var(--azul-800);
+}
+.comparativa p{ margin:0; font-size:.94rem; }
+@media (max-width:600px){
+  .comparativa{ grid-template-columns:1fr; }
+}
+
+/* -------- glosario final: fichas, no prosa -------- */
+.glosario-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(230px,1fr));
+  gap:.9rem;
+  margin:1.2rem 0 1.8rem;
+  padding:0;
+}
+.ficha-termino{
+  border:1px solid var(--gris-claro);
+  border-top:3px solid var(--teal);
+  border-radius:2px;
+  padding:.85rem .95rem;
+  background:var(--panel);
+}
+.ficha-termino dt{
+  font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+  font-weight:700;
+  font-size:.88rem;
+  color:var(--azul-900);
+  margin:0 0 .35rem;
+}
+.ficha-termino dd{
+  margin:0;
+  font-size:.96rem;
+  line-height:1.55;
+  color:var(--tinta);
+  font-family:Calibri,'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+}
+
+/* -------- lista + mapa/imagen a la misma altura, lado a lado -------- */
+.par-mapa{
+  display:grid;
+  grid-template-columns:1.15fr 1fr;
+  gap:1rem;
+  align-items:stretch;
+  margin:1.2rem 0 1.8rem;
+}
+.par-mapa .nota{ margin:0; }
+.par-mapa figure.mapa-figura{ margin:0; }
+@media (max-width:900px){
+  .par-mapa{ grid-template-columns:1fr; }
+}
+
+figure.mapa-figura{
+  width:100%;
+  height:100%;
+  border:1px solid var(--gris-claro);
+  border-radius:6px;
+  padding:1.2rem;
+  background:var(--panel);
+  box-sizing:border-box;
+  display:flex;
+  flex-direction:column;
+}
+figure.mapa-figura img{
+  width:100%;
+  flex:1 1 auto;
+  min-height:0;
+  height:auto;
+  max-height:520px;
+  object-fit:contain;
+  display:block;
+  margin:0 auto;
+}
+figure.mapa-figura figcaption{
+  margin-top:.7rem;
+  font-size:.84rem;
+  color:var(--gris);
+  font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+  text-align:center;
+  line-height:1.5;
+}
+figure.mapa-figura figcaption a{ color:var(--teal); }
+
+/* -------- mini índice bajo la cita de apertura -------- */
+.mini-indice{ font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif; }
+.mini-indice p.toc-titulo{ font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif; }
+.mini-indice a{ font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif; }
+
+/* -------- índice del temario (index.html): mismos componentes -------- */
+.ficha-curso{
+  max-width:600px;
+  font-family:Calibri,'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+}
+.ficha-curso dt{ font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif; }
+section.indice-bloque h2{
+  font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+  font-size:1.25rem;
+}
+section.indice-bloque p.explicacion{
+  font-family:Calibri,'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+  font-size:1rem;
+  max-width:720px;
+}
+ul.lista-temas{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(340px,1fr));
+  gap:.9rem;
+}
+ul.lista-temas li{
+  border:1px solid var(--gris-claro);
+  border-bottom:1px solid var(--gris-claro);
+  border-radius:6px;
+  padding:1rem 1.1rem;
+}
+ul.lista-temas li:last-child{ border-bottom:1px solid var(--gris-claro); }
+.tema-cuerpo a{ font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif; line-height:1.4; }
+.tema-cuerpo p{ font-family:Calibri,'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif; font-size:1.03rem; line-height:1.55; }
+
+@media (max-width:600px){
+  article{ font-size:1.1rem; }
+}
+
+@media print{
+  .nota, .resumen-cierre, .comparativa > div, .ficha-termino{ break-inside:avoid; }
+}
+
+/* ===================================================================
+   Firma del autor (imagen corporativa personal)
+   Uso en cabecera:   <p class="autor"><strong>Juan Antonio Agudo García</strong> · Formador · <a href="…">LinkedIn</a></p>
+   Uso en pie:        <footer class="site"><p class="firma">…</p></footer>
+   Uso en portada:    <div class="marca-autor">…</div>
+   =================================================================== */
+header.site p.autor{
+  margin:.9rem 0 0; font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+  font-size:.85rem; color:#d5e6e3; max-width:var(--maxw);
+}
+header.site p.autor strong{ color:#fff; font-weight:600; }
+header.site p.autor a{ color:var(--teal-claro); text-decoration:none; }
+header.site p.autor a:hover{ text-decoration:underline; }
+
+.marca-autor{
+  display:flex; flex-wrap:wrap; gap:.25rem 1.2rem; align-items:baseline;
+  font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif; font-size:.85rem; color:var(--gris);
+  border-top:2px solid var(--teal); padding-top:.7rem; margin:1.8rem 0 0;
+}
+.marca-autor .nombre{ font-weight:600; color:var(--noche); }
+.marca-autor a{ color:var(--teal); text-decoration:none; }
+.marca-autor a:hover{ text-decoration:underline; }
+
+footer.site p.firma{ margin:0; }
+footer.site p.firma strong{ color:var(--noche); font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif; font-weight:600; }
+
+/* ===================================================================
+   Criterios de maquetación de Juan (miércoles 30/09/2026) — valen para todas sus webs
+   · Se consultan en PC, con pantalla grande: manda el ancho, sin columnas estrechas.
+     En el móvil solo tienen que verse razonablemente bien.
+   · La cabecera usa todo el ancho: sin max-width, así no parte la línea a mitad de frase.
+   · Bloques NUMERADOS → lista, uno debajo de otro.
+   · Bloques NO numerados → tarjetas, 4-5 por fila, con un icono descriptivo.
+   · Las notas de «cómo leer esto» van al FINAL, no delante del contenido.
+   =================================================================== */
+header.site{ padding-left:2.5rem; padding-right:2.5rem; }
+header.site p.subtitulo, header.site p.autor{ max-width:none; }
+ul.lista-temas{ grid-template-columns:1fr; gap:.7rem; }
+ul.lista-temas.tarjetas{ grid-template-columns:repeat(auto-fill, minmax(230px,1fr)); }
+@media (min-width:1300px){ ul.lista-temas.tarjetas{ grid-template-columns:repeat(5,1fr); } }
+ul.lista-temas.tarjetas li{ flex-direction:column; gap:.6rem; }
+.icono-tema{
+  flex:0 0 auto; width:3.4rem; height:3.4rem; border-radius:12px;
+  background:#f7ecd9; color:var(--ambar);
+  display:flex; align-items:center; justify-content:center;
+}
+.icono-tema svg{ width:2.2rem; height:2.2rem; }
+section.nota-final{ margin-top:3rem; }
+section.indice-bloque p.explicacion{ max-width:none; }
+@media (max-width:600px){
+  header.site{ padding-left:1rem; padding-right:1rem; }
+  main{ padding-left:1rem; padding-right:1rem; }
+}
+
+/* Cabecera en una línea menos (Juan, 30/09/2026): la firma va a la derecha de la primera línea */
+header.site .eyebrow-doble{ display:flex; justify-content:space-between; align-items:baseline; gap:1rem; flex-wrap:wrap; }
+header.site .eyebrow-doble .autor-linea{ text-transform:none; letter-spacing:0; font-size:.9rem; font-weight:600; color:#fff; }
+header.site .eyebrow-doble .autor-linea a{ color:var(--teal-claro); }
+/* Metadatos de página (código de color, bloque, fiabilidad) al pie, no antes del título */
+section.nota-final h2{ font-size:1.05rem; margin:0 0 .6rem; }
+section.nota-final .leyenda-terminos{ margin:.4rem 0 .6rem; padding:0; }
+section.nota-final .meta-linea{ margin:.4rem 0; }
+
+/* ===================================================================
+   Web pública del curso (2/10/2026). Copia LOCAL de la hoja de la imagen
+   corporativa de Juan (la web es autónoma: nada enlazado a 05-Assets).
+   Añadidos: banda de enlaces fijos, galería de diapositivas, aviso público.
+   =================================================================== */
+.banda-enlaces{ display:flex; flex-wrap:wrap; gap:.8rem; margin:1.1rem 0 0; }
+.banda-enlaces a{
+  display:inline-flex; align-items:center; gap:.5rem; padding:.55rem 1rem; border-radius:999px;
+  background:var(--teal-claro); color:var(--noche); font-weight:700; text-decoration:none;
+  font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif; font-size:.95rem;
+}
+.banda-enlaces a:hover{ background:#fff; }
+.banda-enlaces svg{ width:1.2rem; height:1.2rem; }
+.galeria{
+  list-style:none; margin:1rem 0 2rem; padding:0;
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(300px,1fr)); gap:1rem;
+}
+.galeria li{ margin:0; }
+.galeria a{ display:block; border:1px solid var(--gris-claro); border-radius:6px; overflow:hidden; background:var(--panel); text-decoration:none; }
+.galeria a:hover{ border-color:var(--teal); box-shadow:0 2px 10px rgba(0,18,32,.12); }
+.galeria img{ display:block; width:100%; height:auto; }
+.galeria span{ display:block; padding:.35rem .7rem; font-size:.85rem; color:var(--gris); font-family:'Segoe UI',system-ui,sans-serif; }
+.imagen-grande{ display:block; width:100%; height:auto; border:1px solid var(--gris-claro); border-radius:6px; margin:.6rem 0 1.4rem; }
+.par-imagenes{ display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; }
+@media (max-width:900px){ .par-imagenes{ grid-template-columns:1fr; } }
+.proximamente{ color:var(--gris); font-style:italic; }
+.num-tema.apagado{ background:var(--gris-claro); color:var(--gris); }
+
+article pre{ white-space:pre-wrap; word-break:break-word; }
