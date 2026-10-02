@@ -627,3 +627,6 @@ section.nota-final .meta-linea{ margin:.4rem 0; }
 .num-tema.apagado{ background:var(--gris-claro); color:var(--gris); }
 
 article pre{ white-space:pre-wrap; word-break:break-word; }
+.galeria{ grid-template-columns:repeat(auto-fill, minmax(420px,1fr)); }
+@media (min-width:1300px){ .galeria{ grid-template-columns:repeat(4,1fr); } }
+.galeria li{ align-self:start; }
